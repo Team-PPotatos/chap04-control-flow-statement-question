@@ -1,5 +1,7 @@
 package com.ohgiraffers.section01.conditional.level03.hard;
 
+import java.util.Scanner;
+
 public class Application1 {
 	
 	public static void main(String[] args) {
@@ -16,7 +18,34 @@ public class Application1 {
 		 * -- 출력 예시 --
 		 * 4 + 3 = 7 
 		 */
-		
+		Scanner scan = new Scanner(System.in);
+		System.out.print("첫 번째 정수 : ");
+		int num1 = scan.nextInt();
+		System.out.print("두 번째 정수 : ");
+		int num2 = scan.nextInt();
+		System.out.print("연산 기호를 입력하세요 : ");
+		String operator = scan.next();
+
+		switch (operator) {
+			case "+" :
+				System.out.println(num1 + " + " + num2 + " = " + (num1 + num2));
+				break;
+			case "-" :
+				System.out.println(num1 + " - " + num2 + " = " + (num1 - num2));
+				break;
+			case "*" :
+				System.out.println(num1 + " * " + num2 + " = " + (num1 * num2));
+				break;
+			case "/" :
+				System.out.println(num1 + " / " + num2 + " = " + (num1 / num2));
+				break;
+			case "%" :
+				System.out.println(num1 + " % " + num2 + " = " + (num1 % num2));
+				break;
+			default :
+				System.out.println("입력하신 연산은 없습니다. 프로그램을 종료합니다.");
+				break;
+		}
 	}
 	
 }
