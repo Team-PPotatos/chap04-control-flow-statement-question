@@ -1,7 +1,6 @@
 package com.ohgiraffers.section01.conditional.level03.hard;
 
 import java.util.HashMap;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class Application2 {
@@ -9,7 +8,7 @@ public class Application2 {
 	public static void main(String[] args) {
 
 		/* 과일 이름("사과", "바나나", "복숭아", "키위") 중 한 가지를 문자열로 입력하면
-		 * 해당하는 가격에 맞게 상품명과 가격이 출력되게 하세요.
+		 * 해당하는 가격에 맞게 상품명과 가격이 출ㅅ력되게 하세요.
 		 * 단, 목록에 없는 과일을 입력 시 "준비된 상품이 없습니다." 출력 후 프로그램 종료
 		 *
 		 * -- 상품 가격 --
