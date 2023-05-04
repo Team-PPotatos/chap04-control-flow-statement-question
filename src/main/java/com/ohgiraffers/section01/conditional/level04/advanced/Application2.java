@@ -1,10 +1,12 @@
 package com.ohgiraffers.section01.conditional.level04.advanced;
 
+import java.util.Scanner;
+
 public class Application2 {
 
 	public static void main(String[] args) {
-		
-		/* 영업사원의 월급을 계산하는 프로그램을 작성하려고 합니다. 
+
+		/* 영업사원의 월급을 계산하는 프로그램을 작성하려고 합니다.
 		 * 월 급여액과 월 매출액을 입력 받아 급여를 산정합니다.
 		 * 영업사원은 매출액 대비 보너스율에 명시된 보너스를 급여 외에 추가로 지급받습니다.
 		 * 
@@ -36,7 +38,40 @@ public class Application2 {
 		 * ======================
 		 * 총 급여 : 3200000
 		 * */
-		
+		Scanner scan = new Scanner(System.in);
+		System.out.print("월 급여 입력 : ");
+		int salary = scan.nextInt();
+		System.out.print("매출액 입력 : ");
+		int sales = scan.nextInt();
+		// 보너스율 계산
+		double bonusRate = 0.0;
+
+		if (sales >= 50000000) {
+			bonusRate = 0.05;
+		} else if (sales >= 30000000) {
+			bonusRate = 0.03;
+		} else if (sales >= 10000000) {
+			bonusRate = 0.01;
+		} else {
+			bonusRate = 0.00;
+		}
+
+		// 보너스 금액 계산
+		int bonus = (int) (sales * bonusRate);
+
+		// 총 급여 계산
+		int totalSalary = salary + bonus;
+
+		// 결과 출력
+		System.out.println("======================");
+		System.out.println("매출액 : " + sales);
+		System.out.println("보너스율 : " + (int) (bonusRate * 100) + "%");
+		System.out.println("월 급여 : " + salary);
+		System.out.println("보너스 금액 : " + bonus);
+		System.out.println("======================");
+		System.out.println("총 급여 : " + totalSalary);
+
+		scan.close();
 	}
 
 }
