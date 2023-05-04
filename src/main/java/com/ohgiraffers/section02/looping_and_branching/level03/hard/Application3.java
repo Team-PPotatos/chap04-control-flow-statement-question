@@ -1,5 +1,7 @@
 package com.ohgiraffers.section02.looping_and_branching.level03.hard;
 
+import java.util.Scanner;
+
 public class Application3 {
 
 	public static void main(String[] args) {
@@ -20,7 +22,7 @@ public class Application3 {
 		 * 문자 입력 : p
 		 * 
 		 * -- 출력 예시 --
-		 * 포함된 갯수 : 1개
+		 * 포함된 갯수 : 2개
 		 * 
 		 * --------------------
 		 * -- 영문자가 아닌 문자 포함된 경우 --
@@ -30,7 +32,27 @@ public class Application3 {
 		 * -- 출력 예시 --
 		 * 영문자가 아닌 문자가 포함되어 있습니다.
 		 * */
-		
+		Scanner scan = new Scanner(System.in);
+		System.out.print("문자열 입력 : ");
+		String str = scan.next();
+
+		for (int i = 0; i < str.length(); i++) {
+			if (!Character.isLetter(str.charAt(i))) {  // 문자열에 영문자가 아닌 문자가 포함된 경우
+				System.out.println("영문자가 아닌 문자가 포함되어 있습니다.");
+				return;
+			}
+		}
+
+		System.out.print("문자 입력 : ");
+		String ch = scan.next();
+
+		int count = 0;
+		for (int i = 0; i < str.length(); i++) {
+			if (str.charAt(i) == ch.charAt(0)) {
+				count++;
+			}
+		}
+		System.out.println("포함된 갯수 : " + count + "개");
 	}
 
 }
