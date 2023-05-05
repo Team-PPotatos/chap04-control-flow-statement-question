@@ -17,14 +17,12 @@ public class Application1 {
 		String answer = ""; 										// 정답 문자열 선언
 
 
-		for (int i = 0; i < str.length(); i++){
-			char aschi = str.charAt(i);
-
-			if (aschi == ' ' ){
+		for (char c : str.toCharArray()){
+			if (c == ' ' ){
 				answer += " ";										// 공백일 경우 공백 +
 			} else {
-				char check = (Character.isLowerCase(aschi)?'a':'A');// 대문자인지 소문자인지 확인
-				answer += (char)(check + (aschi + cnt - check)%26);	// 문자 안에서만 돌게 하기 위해 공식 사용
+				char check = (Character.isLowerCase(c)?'a':'A');// 대문자인지 소문자인지 확인
+				answer += (char)(check + (c + cnt - check)%26);	// 문자 안에서만 돌게 하기 위해 공식 사용
 			}
 		}
 		System.out.print(answer);
