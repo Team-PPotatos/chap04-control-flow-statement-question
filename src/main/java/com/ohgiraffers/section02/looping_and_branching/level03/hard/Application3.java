@@ -1,6 +1,7 @@
 package com.ohgiraffers.section02.looping_and_branching.level03.hard;
 
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 public class Application3 {
 
@@ -37,7 +38,7 @@ public class Application3 {
 		String str = scan.next();
 
 		for (int i = 0; i < str.length(); i++) {
-			if (!Character.isLetter(str.charAt(i))) {  // 문자열에 영문자가 아닌 문자가 포함된 경우
+			if (Pattern.matches("^[a-zA-Z]*$", str) == false) {  // 문자열에 영문자가 아닌 문자가 포함된 경우
 				System.out.println("영문자가 아닌 문자가 포함되어 있습니다.");
 				return;
 			}
