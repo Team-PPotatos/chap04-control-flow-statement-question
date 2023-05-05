@@ -1,9 +1,32 @@
 package com.ohgiraffers.section02.looping_and_branching.level03.hard;
 
+import java.util.Scanner;
+
 public class Application2 {
 
 	public static void main(String[] args) {
-		
+
+		Scanner sc = new Scanner(System.in);
+
+		int guess = (int)(Math.random() * 100 + 1);
+		int cnt = 0;
+
+		while(true) {
+			System.out.print("정수를 입력하세요 : ");
+
+			int num = sc.nextInt();
+
+			if (guess == num){
+				System.out.println("정답입니다. "+cnt+"회 만에 정답을 맞추셨습니다.");
+				break;															// 맞출 시 break
+			} else if (num > guess) {
+				cnt += 1;														// 시도 횟수 count
+				System.out.println("입력하신 정수보다 작습니다.");
+			} else if (num < guess) {
+				cnt += 1;
+				System.out.println("입력하신 정수보다 큽니다.");
+			}
+		}
 		/* 1부터 100 사이의 난수를 발생시키고
 		 * 정수를 입력 받아서 입력받은 정수가 발생한 난수보다 큰 경우 "입력하신 정수보다 큽니다." 출력,
 		 * 입력받은 정수보다 난수가 작은 경우 "입력하신 정수보다 작습니다." 를 출력하며
@@ -23,7 +46,7 @@ public class Application2 {
 		 * 정수를 입력하세요 : 4
 		 * 정답입니다. 3회만에 정답을 맞추셨습니다.
 		 * */
-		
+
 	}
 
 }
