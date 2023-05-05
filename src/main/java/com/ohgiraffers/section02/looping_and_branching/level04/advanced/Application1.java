@@ -1,9 +1,35 @@
 package com.ohgiraffers.section02.looping_and_branching.level04.advanced;
 
+import java.util.Scanner;
+
 public class Application1 {
-	
+
 	public static void main(String[] args) {
-		
+
+		Scanner sc = new Scanner(System.in);
+
+		System.out.print("문자열을 입력하세요 : ");
+		String str = sc.nextLine();
+
+		System.out.print("숫자를 입력하세요 : ");
+		int cnt = sc.nextInt();
+
+		String answer = ""; 										// 정답 문자열 선언
+
+
+		for (int i = 0; i < str.length(); i++){
+			char aschi = str.charAt(i);
+
+			if (aschi == ' ' ){
+				answer += " ";										// 공백일 경우 공백 +
+			} else {
+				char check = (Character.isLowerCase(aschi)?'a':'A');// 대문자인지 소문자인지 확인
+				answer += (char)(check + (aschi + cnt - check)%26);	// 문자 안에서만 돌게 하기 위해 공식 사용
+			}
+		}
+		System.out.print(answer);
+
+
 		/* 어떤 문장의 각 알파벳을 일정한 거리만큼 밀어서
 		 * 다른 알파벳으로 바꾸는 암호화 방식을 시저 암호라고 합니다.
 		 * 
@@ -28,7 +54,7 @@ public class Application1 {
 		 * -- 출력 예시 --
 		 * b C a
 		 * */
-		
+
 	}
-	
+
 }
