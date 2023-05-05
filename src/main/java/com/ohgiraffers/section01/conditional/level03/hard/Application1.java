@@ -44,7 +44,6 @@ public class Application1 {
 				break;
 			default :
 				System.out.println("입력하신 연산은 없습니다. 프로그램을 종료합니다.");
-				break;
 		}
 	}
 	

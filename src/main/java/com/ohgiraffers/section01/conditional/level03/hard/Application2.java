@@ -41,7 +41,6 @@ public class Application2 {
 				break;
 			default :
 				System.out.println("준비된 상품이 없습니다.");
-				break;
 		}
 	}
 
