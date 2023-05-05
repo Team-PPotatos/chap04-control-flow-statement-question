@@ -17,7 +17,7 @@ public class Application2 {
 			int num = sc.nextInt();
 
 			if (guess == num){
-				System.out.println("정답입니다. "+cnt+"회 만에 정답을 맞추셨습니다.");
+				System.out.println(cnt>=1?"정답입니다. "+cnt+"회 만에 정답을 맞추셨습니다.":"정답입니다. 1회 만에 정답을 맞추셨습니다.");
 				break;															// 맞출 시 break
 			} else if (num > guess) {
 				cnt += 1;														// 시도 횟수 count
