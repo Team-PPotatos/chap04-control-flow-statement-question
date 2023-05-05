@@ -19,9 +19,9 @@ public class Application1 {
 		Scanner scan = new Scanner(System.in);
 		int num = scan.nextInt();
 
-		if(num >= 0) {
+		if(num > 0) {
 			System.out.println("양수다.");
-		} else if(num < 0) {
+		} else {
 			System.out.println("양수가 아니다.");
 		};
 
