@@ -1,5 +1,7 @@
 package com.ohgiraffers.section02.looping_and_branching.level04.advanced;
 
+import java.util.Scanner;
+
 public class Application1 {
 	
 	public static void main(String[] args) {
@@ -28,7 +30,25 @@ public class Application1 {
 		 * -- 출력 예시 --
 		 * b C a
 		 * */
-		
+		Scanner scan = new Scanner(System.in);
+		System.out.print("문자열을 입력하세요 : ");
+		String str = scan.nextLine();
+		System.out.print("숫자를 입력하세요 : ");
+		// 26 이상의 수가 입력되는 경우를 대비해서 26으로 나누어 27부터는 다시 1이 되도록 함
+		int num = scan.nextInt() % 26;
+
+		StringBuilder result = new StringBuilder();
+		for (int i = 0; i < str.length(); i++) {
+			// 현재 위치의 문자(ch)를 가져옴
+			char ch = str.charAt(i);
+
+			if (ch >= 'a' && ch <= 'z') { // 소문자일 경우
+				ch = (char) ((ch - 'a' + num) % 26 + 'a');
+			} else if (ch >= 'A' && ch <= 'Z') { // 대문자일 경우
+				ch = (char) ((ch - 'A' + num) % 26 + 'A');
+			}
+			result.append(ch);
+		}
+		System.out.println(result);
 	}
-	
 }
