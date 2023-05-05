@@ -14,14 +14,16 @@ public class Application2 {
 		System.out.print("당신의 신장을 입력하세요. :");
 		int cm = sc.nextInt();
 
-		double bmi = kg / ((cm*0.1) * (cm * 0.1));	// bmi 공식 계산
+		double bmi = kg / ((cm*0.1) * (cm * 0.1));    // bmi 공식 계산
 
 		if (bmi >= 30){
-			System.out.println("당신은 과체중입니다.");
-		} else if ( bmi >= 20 && bmi < 25 ) {		// and 연산자 사용
+			System.out.println("당신은 비만 입니다.");
+		} else if ( bmi >= 25 ) {        // and 연산자 사용
+			System.out.println("당신은 과체중 입니다.");
+		} else if (bmi >= 20){
 			System.out.println("당신은 정상체중 입니다.");
 		} else {
-			System.out.println("당신은 저체중입니다.");
+			System.out.println("당신은 저체중 입니다.");
 		}
 
 
