@@ -26,11 +26,11 @@ public class Application2 {
 
 		if(BMI < 20) {
 			System.out.print("당신은 저체중입니다.");
-		} else if(BMI >= 20 || BMI < 25) {
+		} else if(BMI < 25) {
 			System.out.print("당신은 정상 체중입니다.");
-		} else if(BMI >= 25 || BMI < 30) {
+		} else if(BMI < 30) {
 			System.out.print("당신은 과체중입니다.");
-		} else if(BMI >= 30) {
+		} else {
 			System.out.print("당신은 비만입니다.");
 		}
 	}
