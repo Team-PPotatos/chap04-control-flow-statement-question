@@ -19,13 +19,9 @@ public class Application3 {
 		System.out.print("정수를 입력하세요 : ");
 		int num = sc.nextInt();
 
-		StringBuilder sb = new StringBuilder();
-
 		for(int i = 1; i < num + 1; i++){
-			if (i % 2 == 1) sb.append("수");	// 홀수면 "수" 추가
-			else sb.append("박");				// 짝수면 "박" 추가
+			if (i % 2 == 1) System.out.print("수");   // 홀수면 "수" 출력
+            else System.out.print("박");              // 짝수면 "박" 출력
 		}
-
-		System.out.println(sb);
 	}
 }
