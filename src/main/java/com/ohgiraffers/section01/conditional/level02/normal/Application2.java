@@ -34,5 +34,4 @@ public class Application2 {
 			System.out.print("당신은 비만입니다.");
 		}
 	}
-
 }
