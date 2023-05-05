@@ -1,9 +1,29 @@
 package com.ohgiraffers.section02.looping_and_branching.level03.hard;
 
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
 public class Application3 {
 
 	public static void main(String[] args) {
-		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("문자열 입력 : ");
+		String str = sc.nextLine();
+
+		while (true) {
+			if (Pattern.matches("^[a-zA-Z]*$", str) == false) {				// 영문자 아닌 문자 확인 위해 Pattern 사용
+				System.out.println("영문자가 아닌 문자가 포함되어 있습니다.");
+				break;
+			}
+			System.out.print("문자 입력 : ");
+			String cntStr = sc.next();
+
+			int cnt = str.length() - str.replace(cntStr, "").length();	//  해당 문자는 ""로 replace 후 길이 비교
+			System.out.print("포함된 갯수 : "+ cnt + "개");
+			break;
+		}
+
+
 		/* 문자열을 하나 입력 받고, 검색할 문자를 입력 하여
 		 * 입력받은 문자열에서 검색할 문자가 몇 개 포함되어 있는지를 출력하는 프로그램을 만드세요
 		 * 
@@ -30,7 +50,7 @@ public class Application3 {
 		 * -- 출력 예시 --
 		 * 영문자가 아닌 문자가 포함되어 있습니다.
 		 * */
-		
+
 	}
 
 }
