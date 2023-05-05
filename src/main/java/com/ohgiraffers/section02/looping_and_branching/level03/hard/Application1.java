@@ -1,9 +1,25 @@
 package com.ohgiraffers.section02.looping_and_branching.level03.hard;
 
+import java.util.Scanner;
+
 public class Application1 {
 
 	public static void main(String[] args) {
-		
+
+
+		System.out.print("2보다 큰 정수를 하나 입력하세요 : ");
+		Scanner sc = new Scanner(System.in);
+		int num = sc.nextInt();
+		boolean check = true;
+
+		for (int i=2; i <= Math.sqrt(num); i++ ){		// 해당 값의 루트까지만 계산
+			if (num % i == 0) {
+				check = false;
+				break;									// 더이상 돌릴 필요가 없으니 break로 복잡도 줄임
+			}
+		}
+
+		System.out.println(check == true?"소수다":"소수가 아니다");
 		/* 2보다 큰 정수를 하나 입력 받아 그 수가 소수인지 아닌지를 판별해서 출력하세요
 		 * 소수인 경우 "소수다." 출력, 소수가 아닌 경우 "소수가 아니다." 출력
 		 * 
@@ -14,13 +30,13 @@ public class Application1 {
 		 * 어떤 수를 1부터 자기 자신까지 차례대로 나누었을 때
 		 * 나누어 떨어지는 수가 1과 자기 자신만 존재하는 수를 소수라고 한다.
 		 * 
-		 * -- 입력 예시 --
+		 * -- 입력 예시 --5
 		 * 2보다 큰 정수를 하나 입력하세요 : 7
 		 * 
 		 * -- 출력 예시 --
 		 * 소수다.
 		 * */
-		
+
 	}
 
 }
