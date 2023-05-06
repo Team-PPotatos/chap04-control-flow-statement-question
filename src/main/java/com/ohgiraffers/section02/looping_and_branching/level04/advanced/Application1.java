@@ -36,18 +36,26 @@ public class Application1 {
 		String str = sc.nextLine();
 
 		System.out.print("숫자를 입력하세요 : ");
-		int pushNum = (sc.nextInt() % 27) + 1;        	// 값의 범위가 1~26으로 조정된다.
+		int pushNum = sc.nextInt() % 26;        	// 값의 범위 조정.
 
 		StringBuilder sb = new StringBuilder();
 
 		for (char c : str.toCharArray()) {
 
 			/* 공백일 시 그대로 공백 추가, 아닐 시 문자형에 입력된 숫자만큼 더해준 문자형 추가 */
-			sb.append(c == ' ' ? ' ' : (char) (c + pushNum));
+			if (c == ' ') {
+				sb.append(' ');
+			} else {
+
+				/* 알파벳 범위를 넘지 않게 push */
+				if (c >= 'a' && c <= 'z') {
+					sb.append((char)('a' + (c + pushNum - 'a') % 26));
+				} else if (c >= 'A' && c <= 'Z'){
+					sb.append((char)('A' + (c + pushNum - 'A') % 26));
+				}
+			}
 		}
 
 		System.out.println(sb);
-
 	}
-
 }
